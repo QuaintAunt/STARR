@@ -1,0 +1,9 @@
+/build/
+/data/
+/outputs/
+/checkpoints/
+/train_examples.pkl
+/val_examples.pkl
+__pycache__/
+*.pyc
+.venv/

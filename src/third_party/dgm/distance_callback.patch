@@ -1,0 +1,48 @@
+--- a/include/dgm/embedding_space.hpp	2026-11-05 09:30:50.896851013 +0800
++++ b/include/dgm/embedding_space.hpp	2026-11-05 09:50:39.015752367 +0800
+@@ -17,7 +17,9 @@
+                    std::size_t row_count,
+                    std::size_t dimensions,
+                    Metric metric = Metric::kCosine,
+-                   std::size_t thread_count = 0);
++                   std::size_t thread_count = 0,
++                   float (*distance_callback)(const void*, const void*, const void*) = nullptr,
++                   const void* distance_context = nullptr);
+ 
+     [[nodiscard]] std::size_t size() const noexcept;
+     [[nodiscard]] std::size_t dimensions() const noexcept;
+@@ -26,6 +28,8 @@
+     [[nodiscard]] float distance(NodeId lhs, NodeId rhs) const;
+ 
+ private:
++    float (*distance_callback_)(const void*, const void*, const void*){nullptr};
++    const void* distance_context_{nullptr};
+     const float* values_{nullptr};
+     std::size_t row_count_{0};
+     std::size_t dimensions_{0};
+--- a/src/embedding_space.cpp	2026-11-05 09:30:50.897089396 +0800
++++ b/src/embedding_space.cpp	2026-11-05 09:50:39.015845357 +0800
+@@ -15,8 +15,14 @@
+                                std::size_t row_count,
+                                std::size_t dimensions,
+                                Metric metric,
+-                               std::size_t thread_count)
++                               std::size_t thread_count,
++                               float (*distance_callback)(const void*, const void*, const void*),
++                               const void* distance_context)
+     : values_(values), row_count_(row_count), dimensions_(dimensions), metric_(metric) {
++    distance_callback_ = distance_callback;
++    distance_context_ = distance_context;
++    if (distance_callback_ && metric != Metric::kSquaredL2)
++        throw std::invalid_argument("distance callback requires squared L2");
+     if (values_ == nullptr && row_count_ != 0) {
+         throw std::invalid_argument("embedding data is null");
+     }
+@@ -85,6 +91,7 @@
+ EmbeddingSpace::distance(NodeId lhs, NodeId rhs) const {
+     const float* lhs_vector = row(lhs);
+     const float* rhs_vector = row(rhs);
++    if (distance_callback_) return distance_callback_(lhs_vector, rhs_vector, distance_context_);
+     double accumulator = 0.0;
+     if (metric_ == Metric::kSquaredL2) {
+         for (std::size_t dim = 0; dim < dimensions_; ++dim) {

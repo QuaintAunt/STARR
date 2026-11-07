@@ -1,0 +1,10 @@
+numpy
+sentence-transformers>=5,<6
+datasets>=3,<5
+torch>=2.5,<3
+torchvision
+transformers
+Pillow
+tqdm
+requests
+accelerate

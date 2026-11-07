@@ -1,0 +1,379 @@
+{
+  "n": 1000000,
+  "query_count": 1000,
+  "M": 16,
+  "efConstruction": 200,
+  "query_ef": 200,
+  "tau": 2,
+  "B": 16,
+  "scenes": [
+    {
+      "paper_scene": 1,
+      "dataset": "MsMarco",
+      "source_model": "bge-base-en-v1.5",
+      "target_model": "bge-base-en-v1.5-finetuned-msmarco",
+      "source_dim": 768,
+      "target_dim": 768,
+      "source_vectors": "MsMarco/msmarco_BAAI_bge-base-en-v1.5.bin",
+      "target_vectors": "MsMarco/msmarco_BAAI_bge-base-en-v1.5-finetuned-msmarco.bin",
+      "implementation": "matrix"
+    },
+    {
+      "paper_scene": 2,
+      "dataset": "MsMarco",
+      "source_model": "bge-base-en",
+      "target_model": "bge-base-en-v1.5",
+      "source_dim": 768,
+      "target_dim": 768,
+      "source_vectors": "MsMarco/msmarco_BAAI_bge-base-en.bin",
+      "target_vectors": "MsMarco/msmarco_BAAI_bge-base-en-v1.5.bin",
+      "implementation": "matrix"
+    },
+    {
+      "paper_scene": 3,
+      "dataset": "MsMarco",
+      "source_model": "bge-small-en-v1.5",
+      "target_model": "bge-large-en-v1.5",
+      "source_dim": 384,
+      "target_dim": 1024,
+      "source_vectors": "MsMarco/msmarco_BAAI_bge-small-en-v1.5.bin",
+      "target_vectors": "MsMarco/msmarco_BAAI_bge-large-en-v1.5.bin",
+      "implementation": "matrix"
+    },
+    {
+      "paper_scene": 4,
+      "dataset": "MsMarco",
+      "source_model": "MiniLM-L6-H384",
+      "target_model": "gte-large",
+      "source_dim": 384,
+      "target_dim": 1024,
+      "source_vectors": "MsMarco/msmarco_MiniLM-L6-H384.bin",
+      "target_vectors": "MsMarco/msmarco_gte-large.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 5,
+      "dataset": "MsMarco",
+      "source_model": "bge-large-en-v1.5",
+      "target_model": "gte-large",
+      "source_dim": 1024,
+      "target_dim": 1024,
+      "source_vectors": "MsMarco/msmarco_BAAI_bge-large-en-v1.5.bin",
+      "target_vectors": "MsMarco/msmarco_gte-large.bin",
+      "implementation": "matrix"
+    },
+    {
+      "paper_scene": 6,
+      "dataset": "Wikipedia_dpr",
+      "source_model": "bge-base-en-v1.5",
+      "target_model": "bge-base-en-v1.5-finetuned-msmarco",
+      "source_dim": 768,
+      "target_dim": 768,
+      "source_vectors": "Wikipedia_dpr/wikipedia_dpr_bge-base-en-v1.5.bin",
+      "target_vectors": "Wikipedia_dpr/wikipedia_dpr_bge-base-en-v1.5-finetuned-msmarco.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 7,
+      "dataset": "Wikipedia_dpr",
+      "source_model": "bge-base-en",
+      "target_model": "bge-base-en-v1.5",
+      "source_dim": 768,
+      "target_dim": 768,
+      "source_vectors": "Wikipedia_dpr/wikipedia_dpr_bge-base-en.bin",
+      "target_vectors": "Wikipedia_dpr/wikipedia_dpr_bge-base-en-v1.5.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 8,
+      "dataset": "Wikipedia_dpr",
+      "source_model": "bge-small-en-v1.5",
+      "target_model": "bge-large-en-v1.5",
+      "source_dim": 384,
+      "target_dim": 1024,
+      "source_vectors": "Wikipedia_dpr/wikipedia_dpr_bge-small-en-v1.5.bin",
+      "target_vectors": "Wikipedia_dpr/wikipedia_dpr_bge-large-en-v1.5.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 9,
+      "dataset": "Wikipedia_dpr",
+      "source_model": "MiniLM-L6-H384",
+      "target_model": "gte-large",
+      "source_dim": 384,
+      "target_dim": 1024,
+      "source_vectors": "Wikipedia_dpr/wikipedia_dpr_MiniLM-L6-H384.bin",
+      "target_vectors": "Wikipedia_dpr/wikipedia_dpr_gte-large.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 10,
+      "dataset": "Wikipedia_dpr",
+      "source_model": "e5-large-v2",
+      "target_model": "bge-base-en-v1.5",
+      "source_dim": 1024,
+      "target_dim": 768,
+      "source_vectors": "Wikipedia_dpr/wikipedia_dpr_e5-large-v2.bin",
+      "target_vectors": "Wikipedia_dpr/wikipedia_dpr_bge-base-en-v1.5.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 11,
+      "dataset": "CC3M",
+      "source_model": "dinov1-vits16",
+      "target_model": "dinov1-vitb16",
+      "source_dim": 384,
+      "target_dim": 768,
+      "source_vectors": "CC3M/cc3m_dinov1-vits16.bin",
+      "target_vectors": "CC3M/cc3m_dinov1-vitb16.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 12,
+      "dataset": "CC3M",
+      "source_model": "dinov1-vitb16",
+      "target_model": "dinov2-base",
+      "source_dim": 768,
+      "target_dim": 768,
+      "source_vectors": "CC3M/cc3m_dinov1-vitb16.bin",
+      "target_vectors": "CC3M/cc3m_dinov2-base.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 13,
+      "dataset": "CC3M",
+      "source_model": "clip_vit_large_patch14",
+      "target_model": "siglip_base_patch16_224",
+      "source_dim": 768,
+      "target_dim": 768,
+      "source_vectors": "CC3M/cc3m_clip_vit_large_patch14.bin",
+      "target_vectors": "CC3M/cc3m_siglip_base_patch16_224.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 14,
+      "dataset": "CC3M",
+      "source_model": "siglip_base_patch16_224",
+      "target_model": "clip_vit_large_patch14",
+      "source_dim": 768,
+      "target_dim": 768,
+      "source_vectors": "CC3M/cc3m_siglip_base_patch16_224.bin",
+      "target_vectors": "CC3M/cc3m_clip_vit_large_patch14.bin",
+      "implementation": "full"
+    },
+    {
+      "paper_scene": 15,
+      "dataset": "CC3M",
+      "source_model": "dinov1-resnet50",
+      "target_model": "dinov2-base",
+      "source_dim": 2048,
+      "target_dim": 768,
+      "source_vectors": "CC3M/cc3m_dinov1-resnet50.bin",
+      "target_vectors": "CC3M/cc3m_dinov2-base.bin",
+      "implementation": "full"
+    }
+  ],
+  "recall_qps_scenes": [
+    2,
+    4,
+    7,
+    9,
+    11,
+    15
+  ],
+  "ablation_pairs": [
+    [
+      "MsMarco",
+      "bge-base-en",
+      "bge-base-en-v1.5"
+    ],
+    [
+      "MsMarco",
+      "MiniLM-L6-H384",
+      "gte-large"
+    ],
+    [
+      "Wikipedia_dpr",
+      "bge-base-en",
+      "bge-base-en-v1.5"
+    ],
+    [
+      "Wikipedia_dpr",
+      "MiniLM-L6-H384",
+      "gte-large"
+    ],
+    [
+      "CC3M",
+      "dinov1-vitb16",
+      "dinov2-base"
+    ],
+    [
+      "CC3M",
+      "clip_vit_large_patch14",
+      "siglip_base_patch16_224"
+    ]
+  ],
+  "sweep_pairs": [
+    [
+      "MsMarco",
+      "MiniLM-L6-H384",
+      "gte-large"
+    ],
+    [
+      "Wikipedia_dpr",
+      "bge-base-en",
+      "bge-base-en-v1.5"
+    ],
+    [
+      "CC3M",
+      "dinov1-vitb16",
+      "dinov2-base"
+    ]
+  ],
+  "tau_grid": [
+    0,
+    0.5,
+    1,
+    1.5,
+    2,
+    2.5,
+    3
+  ],
+  "B_grid": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "dgm_local_grid": {
+    "C": [
+      64,
+      128,
+      256,
+      400,
+      800
+    ],
+    "alpha": [
+      1,
+      1.1,
+      1.2
+    ]
+  },
+  "dgm_search_grid": {
+    "L": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "H": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "alpha": [
+      1,
+      1.1,
+      1.2
+    ]
+  },
+  "matrix_models": [
+    {
+      "name": "BAAI_bge-base-en",
+      "model_id": "BAAI/bge-base-en",
+      "dim": 768,
+      "prefix": ""
+    },
+    {
+      "name": "BAAI_bge-base-en-v1.5",
+      "model_id": "BAAI/bge-base-en-v1.5",
+      "dim": 768,
+      "prefix": ""
+    },
+    {
+      "name": "BAAI_bge-base-en-v1.5-finetuned-msmarco",
+      "model_id": "./checkpoints/bge-base/best",
+      "dim": 768,
+      "prefix": ""
+    },
+    {
+      "name": "BAAI_bge-large-en",
+      "model_id": "BAAI/bge-large-en",
+      "dim": 1024,
+      "prefix": ""
+    },
+    {
+      "name": "BAAI_bge-large-en-v1.5",
+      "model_id": "BAAI/bge-large-en-v1.5",
+      "dim": 1024,
+      "prefix": ""
+    },
+    {
+      "name": "BAAI_bge-large-en-v1.5-finetuned-msmarco",
+      "model_id": "./checkpoints/bge-large/best",
+      "dim": 1024,
+      "prefix": ""
+    },
+    {
+      "name": "BAAI_bge-small-en",
+      "model_id": "BAAI/bge-small-en",
+      "dim": 384,
+      "prefix": ""
+    },
+    {
+      "name": "BAAI_bge-small-en-v1.5",
+      "model_id": "BAAI/bge-small-en-v1.5",
+      "dim": 384,
+      "prefix": ""
+    },
+    {
+      "name": "all-MiniLM-L6-v2",
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "dim": 384,
+      "prefix": ""
+    },
+    {
+      "name": "MiniLM-L6-H384",
+      "model_id": "nreimers/MiniLM-L6-H384-uncased",
+      "dim": 384,
+      "prefix": ""
+    },
+    {
+      "name": "all-mpnet-base-v2",
+      "model_id": "sentence-transformers/all-mpnet-base-v2",
+      "dim": 768,
+      "prefix": ""
+    },
+    {
+      "name": "mpnet-base",
+      "model_id": "microsoft/mpnet-base",
+      "dim": 768,
+      "prefix": ""
+    },
+    {
+      "name": "contriever",
+      "model_id": "facebook/contriever",
+      "dim": 768,
+      "prefix": ""
+    },
+    {
+      "name": "contriever-msmarco",
+      "model_id": "facebook/contriever-msmarco",
+      "dim": 768,
+      "prefix": ""
+    },
+    {
+      "name": "e5-large-v2",
+      "model_id": "intfloat/e5-large-v2",
+      "dim": 1024,
+      "prefix": "passage: "
+    },
+    {
+      "name": "gte-large",
+      "model_id": "thenlper/gte-large",
+      "dim": 1024,
+      "prefix": ""
+    }
+  ]
+}

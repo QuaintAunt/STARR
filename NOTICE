@@ -1,0 +1,5 @@
+STARR: Standardized Tolerance for Adaptive Reuse and Repair
+Copyright 2026 STARR contributors
+
+Project code: Apache-2.0. Vendored hnswlib, DGM and DINO retain their licenses.
+DGM includes an optional hnswlib squared-L2 callback; patch retained in src/third_party/dgm.
